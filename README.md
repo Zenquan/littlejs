@@ -1,6 +1,6 @@
 # Little.js
 
-最好用的js第三方库脚手架，fork或clone本仓库，即可搭建完成一个新库的基础框架
+>本项目是基于[jslib-base](https://github.com/yanhaijing/jslib-base)重构Little.js，感谢作者。
 
 ## 特性
 
@@ -46,25 +46,25 @@
 通过npm下载安装代码
 
 ```bash
-$ npm install --save jslib_base
+$ npm install --save Little.js
 ```
 
 如果你是node环境
 
 ```js
-var base = require('jslib_base');
+var base = require('Little.js');
 ```
 
 如果你是webpack等环境
 
 ```js
-import base from 'jslib_base';
+import base from 'Little.js';
 ```
 
 如果你是requirejs环境
 
 ```js
-requirejs(['node_modules/jslib_base/dist/index.aio.js'], function (base) {
+requirejs(['node_modules/Little.js/dist/index.aio.js'], function (base) {
     // xxx
 })
 ```
@@ -72,11 +72,11 @@ requirejs(['node_modules/jslib_base/dist/index.aio.js'], function (base) {
 如果你是浏览器环境
 
 ```html
-<script src="node_modules/jslib_base/dist/index.aio.js"></script>
+<script src="node_modules/Little.js/dist/index.aio.js"></script>
 ```
 
 ## 文档
-[API](https://github.com/yanhaijing/jslib-base/blob/master/doc/api.md)
+[API](https://github.com/zenquan/Little.js/blob/master/doc/api.md)
 
 ## 贡献指南
 首次运行需要先安装依赖
@@ -117,10 +117,10 @@ $ npm publish
 - test/browser/index.html 中的仓库名称
 
 ## 更新日志
-[CHANGELOG.md](https://github.com/yanhaijing/jslib-base/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/zenquan/Little.js/blob/master/CHANGELOG.md)
 
 ## 计划列表
-[TODO.md](https://github.com/yanhaijing/jslib-base/blob/master/TODO.md)
+[TODO.md](https://github.com/zenquan/Little.js/blob/master/TODO.md)
 
 ## 谁在使用
 
