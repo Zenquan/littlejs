@@ -1,7 +1,12 @@
+import {
+    getStyle,
+    getClass
+} from './utils'
+
 class Little {
     constructor(id) {
         /*------------------------attribute--------------------------*/
-        letoDiv = document.getElementById(id);
+        let oDiv = document.getElementById(id);
         this.aBtn = oDiv.getElementsByTagName('input');
         this.aDiv = oDiv.getElementsByTagName('div');
 
@@ -174,29 +179,3 @@ class Little {
         });
     }
 }
-
-/*------------------------getStyle--------------------------*/
-//获取非行间样式
-let getStyle = (obj, name) => {
-    if (obj.currentStyle) {
-        //IE
-        return obj.currentStyle[name];
-    } else {
-        //FF、Chrome
-        return getComputedStyle(obj, false)[name];
-    }
-};
-/*------------------------getClass--------------------------*/
-//获取类名class
-let getClass = (oParent, sClass) => {
-    var aEle = oParent.getElementsByTagName('*');
-    var aResult = [];
-
-    for (var i = 0; i < aEle.length; i++) {
-        if (aEle[i].className == sClass) {
-            aResult.push(aEle[i]);
-        }
-    }
-
-    return aResult;
-};
