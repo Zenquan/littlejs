@@ -99,7 +99,7 @@ var ex = new little('div1');
 ex.startMove(this, {'opacity': 100});
 ```
 ## 线上测试
-[库测试](https://www.jomsou.cn/demo/index.html)
+[库测试](https://www.jomsou.cn/littlejs)
 
 ## 文档
 [API](https://github.com/zenquan/littlejs/blob/master/doc/api.md)
@@ -143,10 +143,10 @@ $ npm publish
 - test/browser/index.html 中的仓库名称
 
 ## 更新日志
-[CHANGELOG.md](https://github.com/zenquan/littlejs/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/Zenquan/littlejs/blob/v0.2.0/CHANGELOG.md)
 
 ## 计划列表
-[TODO.md](https://github.com/zenquan/littlejs/blob/master/TODO.md)
+[TODO.md](https://github.com/Zenquan/littlejs/blob/v0.2.0/TODO.md)
 
 ## 谁在使用
 
