@@ -1,4 +1,6 @@
-# littlejs
+# littlejs 
+
+-- Little but basic(很小却基础)
 
 >本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)重构littlejs，感谢作者。
 
