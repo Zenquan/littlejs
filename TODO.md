@@ -21,10 +21,11 @@
 
 ## ZenD(自己的标准包括md)
 
-## Psion(littlejs的组件库)
+## Psion(littlejs的组件库)（融合babelPlugin）
 ### Basic
 - [ ] Layout布局
 - [ ] Container容器
+
 
 ## littleMvvm
 - littleMvvm
