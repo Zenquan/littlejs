@@ -1,5 +1,5 @@
 {
-  "name": "Little.js",
+  "name": "littlejs",
   "version": "0.2.0",
   "description": "js基础库",
   "main": "dist/index.js",
@@ -19,10 +19,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/zenquan/Little.js"
+    "url": "git://github.com/zenquan/littlejs"
   },
   "bugs": {
-    "url": "https://github.com/zenquan/Little.js/issues"
+    "url": "https://github.com/zenquan/littlejs/issues"
   },
   "devDependencies": {
     "babel-core": "6.26.0",

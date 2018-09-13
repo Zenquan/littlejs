@@ -3,7 +3,7 @@ import {
     getClass
 } from './utils'
 
-class Little {
+class little {
     constructor(id) {
         /*------------------------attribute--------------------------*/
         let oDiv = document.getElementById(id);
@@ -13,7 +13,7 @@ class Little {
         let _this = this;
         for (let i = 0; i < this.aBtn.length; i++) {
             this.aBtn[i].index = i;
-            this.aBtn[i].addEventListener('click', () => {
+            this.aBtn[i].addEventListener('click', function() {
                 _this.tabSwitch(this);
             }, false)
         }

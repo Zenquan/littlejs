@@ -1,6 +1,19 @@
-# Little.js
+# littlejs
 
->本项目是基于[jslib-base](https://github.com/yanhaijing/jslib-base)重构Little.js，感谢作者。
+>本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)重构littlejs，感谢作者。
+
+## 功能
+一般的简单普通页面都用到以下功能库：
+
+1、运动框架（轮播图、按钮渐显渐隐)；
+
+2、选项卡；
+
+3、用ajax实现前后端分离；
+
+4、设置、获取或者删除cookie；
+
+5、支持异步方法之一generator的使用。
 
 ## 特性
 
@@ -46,25 +59,25 @@
 通过npm下载安装代码
 
 ```bash
-$ npm install --save Little.js
+$ npm install --save littlejs
 ```
 
 如果你是node环境
 
 ```js
-var base = require('Little.js');
+var little = require('littlejs');
 ```
 
 如果你是webpack等环境
 
 ```js
-import base from 'Little.js';
+import little from 'littlejs';
 ```
 
 如果你是requirejs环境
 
 ```js
-requirejs(['node_modules/Little.js/dist/index.aio.js'], function (base) {
+requirejs(['node_modules/littlejs/dist/index.aio.js'], function (little) {
     // xxx
 })
 ```
@@ -72,11 +85,24 @@ requirejs(['node_modules/Little.js/dist/index.aio.js'], function (base) {
 如果你是浏览器环境
 
 ```html
-<script src="node_modules/Little.js/dist/index.aio.js"></script>
+<script src="node_modules/littlejs/dist/index.aio.js"></script>
 ```
 
+在body结束标签结束前引入littlejs.js
+
+```
+<script src="./dist/index.js"></script>
+```
+然后使用函数
+```
+var ex = new little('div1');
+ex.startMove(this, {'opacity': 100});
+```
+## 线上测试
+[库测试](https://www.jomsou.cn/demo/index.html)
+
 ## 文档
-[API](https://github.com/zenquan/Little.js/blob/master/doc/api.md)
+[API](https://github.com/zenquan/littlejs/blob/master/doc/api.md)
 
 ## 贡献指南
 首次运行需要先安装依赖
@@ -117,14 +143,14 @@ $ npm publish
 - test/browser/index.html 中的仓库名称
 
 ## 更新日志
-[CHANGELOG.md](https://github.com/zenquan/Little.js/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/zenquan/littlejs/blob/master/CHANGELOG.md)
 
 ## 计划列表
-[TODO.md](https://github.com/zenquan/Little.js/blob/master/TODO.md)
+[TODO.md](https://github.com/zenquan/littlejs/blob/master/TODO.md)
 
 ## 谁在使用
 
-- [@jsmini/base](https://github.com/jsmini/base)
+- [@jsmini/little](https://github.com/jsmini/little)
 - [@jsmini/type](https://github.com/jsmini/type)
 - [@jsmini/is](https://github.com/jsmini/is)
 - [@jsmini/guid](https://github.com/jsmini/guid)

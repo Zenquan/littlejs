@@ -6,10 +6,10 @@ var version = pkg.version;
 
 var banner = 
 `/*!
- * Little.js ${version} (https://github.com/zenquan/Little.js)
- * API https: //github.com/zenquan/Little.js/blob/master/doc/api.md
+ * littlejs ${version} (https://github.com/zenquan/littlejs)
+ * API https: //github.com/zenquan/littlejs/blob/master/doc/api.md
  * Copyright 2017-${(new Date).getFullYear()} zenquan. All Rights Reserved
- * Licensed under MIT(https: //github.com/zenquan/Little.js/blob/master/LICENSE)
+ * Licensed under MIT(https: //github.com/zenquan/littlejs/blob/master/LICENSE)
  */
 `;
 
