@@ -1,6 +1,6 @@
 # littlejs   -- Little and basic(小又基础)
 
->本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)重构littlejs，感谢作者。
+>本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs。
 
 ## 功能
 一般的简单普通页面都用到以下功能库：
