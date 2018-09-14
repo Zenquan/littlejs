@@ -1,10 +1,9 @@
-import {
-    getStyle,
-    getClass
-} from './utils'
+import { getStyle, getClass } from './utils'
+import { ajax, fetch } from './http'
+import move from './move'
 
 class little {
-    constructor(id) {
+    constructor(id, ev) {
         /*------------------------attribute--------------------------*/
         let oDiv = document.getElementById(id);
         this.aBtn = oDiv.getElementsByTagName('input');
@@ -13,7 +12,7 @@ class little {
         let _this = this;
         for (let i = 0; i < this.aBtn.length; i++) {
             this.aBtn[i].index = i;
-            this.aBtn[i].addEventListener('click', function() {
+            this.aBtn[i].addEventListener(ev, function() {
                 _this.tabSwitch(this);
             }, false)
         }
@@ -36,78 +35,6 @@ class little {
         }
         oBtn.className = 'active';
         this.aDiv[oBtn.index].style.display = 'block';
-    }
-    /*------------------------startMove--------------------------*/
-    //完美运动框架
-    startMove(obj, json, fnEnd) {
-        clearInterval(obj.timer);
-
-        function moveTo() {
-            var bStop = true; //假设：所有值都已经到了
-
-            for (var attr in json) {
-                var cur = 0;
-
-                if (attr == 'opacity') {
-                    cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
-                } else {
-                    cur = parseInt(getStyle(obj, attr));
-                }
-
-                var speed = (json[attr] - cur) / 6;
-                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-
-                if (cur != json[attr])
-                    bStop = false;
-
-                if (attr == 'opacity') {
-                    obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
-                    obj.style.opacity = (cur + speed) / 100;
-                } else {
-                    obj.style[attr] = cur + speed + 'px';
-                }
-            }
-
-            if (bStop) {
-                clearInterval(obj.timer);
-
-                if (fnEnd) fnEnd();
-            }
-        }
-        obj.timer = setInterval(moveTo, 30);
-    }
-    /*------------------------ajax.js--------------------------*/
-    ajax(method, url, data, success) {
-        //1.创建服务
-        var xhr = null;
-        try {
-            xhr = new XMLHttpRequest();
-        } catch (error) {
-            xhr = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-        //2.判断提交方法，get方法url数据处理
-        if (method == 'get' && data) {
-            url += '?' + data;
-        }
-        //3.打开服务
-        xhr.open(method, url, true);
-        //4.发送服务
-        if (method == 'get') {
-            xhr.send();
-        } else {
-            xhr.setRequestHeader('content-type', 'appliction/x-www-form-urlencoded');
-            xhr.send(data);
-        }
-        //5.接收响应
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-                    success && success(xhr.responseText);
-                } else {
-                    alert(xhr.status);
-                }
-            }
-        }
     }
     /*------------------------cookie--------------------------*/
     /* 设置cookie */

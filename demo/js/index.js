@@ -1,4 +1,4 @@
-var  ex = new little('div1');
+var  ex = new little('div1', 'click');
 
 var oPlays = document.getElementById('plays'); //获取相关元素
 var oBtn_prev = document.getElementById('p_prev'); //左按钮
