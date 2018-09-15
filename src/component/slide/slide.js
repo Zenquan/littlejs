@@ -129,7 +129,7 @@ touchFunction('touchmove');
 touchFunction('touchend');
 
 //等过渡结束之后来做无缝衔接
-utils.transitionEnd(CarouselArgs.imageBox, function () {
+slideUtils.transitionEnd(CarouselArgs.imageBox, function () {
     //处理事件结束后的业务逻辑
     if (CarouselArgs.index > CarouselArgs.imageCount) {
         CarouselArgs.index = 1;

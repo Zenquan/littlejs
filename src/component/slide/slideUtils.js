@@ -4,7 +4,7 @@
 
 /*封装一些公用的事件或者公用的方法*/
 /*定义的一个命名空间*/
-let utils = {
+let slideUtils = {
     /*封装一个事件 过渡结束事件*/
     transitionEnd: function (dom, callback) {
         //1.给谁加事件
