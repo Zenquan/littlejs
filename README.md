@@ -60,7 +60,7 @@
 通过npm下载安装代码
 
 ```bash
-$ npm install --save littlejs
+$ npm install --save @jomsou/littlejs
 ```
 
 如果你是node环境
