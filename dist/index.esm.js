@@ -139,6 +139,52 @@ var tap = function tap(dom, callback) {
     });
 };
 
+/*--------------------generator's runner---------------------*/
+/*
+使用实例：runner(function *(){
+  let data1=yield $.ajax({url: xxx, dataType: 'json'});
+  let data2=yield $.ajax({url: xxx, dataType: 'json'});
+  let data3=yield $.ajax({url: xxx, dataType: 'json'});
+  console.log(data1, data2, data3);
+});
+注意要引进jq
+*/
+var runner = function runner(_gen) {
+    return new Promise(function (resolve, reject) {
+        var gen = _gen();
+
+        _next();
+
+        function _next(_last_res) {
+            var res = gen.next(_last_res);
+
+            if (!res.done) {
+                var obj = res.value;
+
+                if (obj.then) {
+                    obj.then(function (res) {
+                        _next(res);
+                    }, function (err) {
+                        reject(err);
+                    });
+                } else if (typeof obj == 'function') {
+                    if (obj.constructor.toString().startsWith('function GeneratorFunction()')) {
+                        runner(obj).then(function (res) {
+                            return _next(res);
+                        }, reject);
+                    } else {
+                        _next(obj());
+                    }
+                } else {
+                    _next(obj);
+                }
+            } else {
+                resolve(res.value);
+            }
+        }
+    });
+};
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -147,10 +193,26 @@ var little = function () {
     function little() {
         _classCallCheck(this, little);
     }
-    /*-----------------------addEventHandler---------------------------*/
-
 
     _createClass(little, [{
+        key: 'attribute',
+        value: function attribute(id, btn, div, fn) {
+            /*------------------------attribute--------------------------*/
+            var oDiv = document.getElementById(id);
+            this.aBtn = oDiv.getElementsByTagName(btn);
+            this.aDiv = oDiv.getElementsByTagName(div);
+
+            var _this = this;
+            for (var i = 0; i < this.aBtn.length; i++) {
+                this.aBtn[i].index = i;
+                this.aBtn[i].addEventListener('click', function () {
+                    _this.fn(id, this);
+                }, false);
+            }
+        }
+        /*-----------------------addEventHandler---------------------------*/
+
+    }, {
         key: 'addEventHandler',
         value: function addEventHandler(elm, type, handler) {
             if (elm.addEventListener) {
@@ -216,64 +278,11 @@ var little = function () {
         value: function ajax$$1(method, url, data, success) {
             return new ajax(method, url, data, success);
         }
-        /*--------------------generator's runner---------------------*/
-        /*
-        使用实例：runner(function *(){
-          let data1=yield $.ajax({url: xxx, dataType: 'json'});
-          let data2=yield $.ajax({url: xxx, dataType: 'json'});
-          let data3=yield $.ajax({url: xxx, dataType: 'json'});
-          console.log(data1, data2, data3);
-        });
-        注意要引进jq
-        */
-
     }, {
         key: 'runner',
-        value: function (_runner) {
-            function runner(_x) {
-                return _runner.apply(this, arguments);
-            }
-
-            runner.toString = function () {
-                return _runner.toString();
-            };
-
-            return runner;
-        }(function (_gen) {
-            return new Promise(function (resolve, reject) {
-                var gen = _gen();
-
-                _next();
-
-                function _next(_last_res) {
-                    var res = gen.next(_last_res);
-
-                    if (!res.done) {
-                        var obj = res.value;
-
-                        if (obj.then) {
-                            obj.then(function (res) {
-                                _next(res);
-                            }, function (err) {
-                                reject(err);
-                            });
-                        } else if (typeof obj == 'function') {
-                            if (obj.constructor.toString().startsWith('function GeneratorFunction()')) {
-                                runner(obj).then(function (res) {
-                                    return _next(res);
-                                }, reject);
-                            } else {
-                                _next(obj());
-                            }
-                        } else {
-                            _next(obj);
-                        }
-                    } else {
-                        resolve(res.value);
-                    }
-                }
-            });
-        })
+        value: function runner$$1(_gen) {
+            return new runner(_gen);
+        }
     }]);
 
     return little;

@@ -1,0 +1,16 @@
+ #div1 div {
+     width: 200px;
+     height: 200px;
+     border: 1px solid #ccc;
+     display: none;
+ }
+
+ .active {
+     background: orange;
+ }
+ * {
+     margin: 0;
+     padding: 0;
+     border-width: 0;
+     font-family: 微软雅黑;
+ }

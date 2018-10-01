@@ -4,10 +4,25 @@ import tap from './tap'
 import {
     transitionEnd
 } from './utils'
+import runner from './runner'
 
 class little {
     constructor() {
     }
+    attribute(id, btn, div, fn) {
+         /*------------------------attribute--------------------------*/
+         let oDiv = document.getElementById(id);
+         this.aBtn = oDiv.getElementsByTagName(btn);
+         this.aDiv = oDiv.getElementsByTagName(div);
+
+         let _this = this;
+         for (let i = 0; i < this.aBtn.length; i++) {
+             this.aBtn[i].index = i;
+             this.aBtn[i].addEventListener('click', function () {
+                 _this.fn(id, this);
+             }, false)
+         }
+     }
     /*-----------------------addEventHandler---------------------------*/
     addEventHandler(elm, type, handler) {
         if (elm.addEventListener) {
@@ -56,47 +71,7 @@ class little {
     ajax(method, url, data, success) {
         return new ajax(method, url, data, success);
     }
-    /*--------------------generator's runner---------------------*/
-    /*
-    使用实例：runner(function *(){
-      let data1=yield $.ajax({url: xxx, dataType: 'json'});
-      let data2=yield $.ajax({url: xxx, dataType: 'json'});
-      let data3=yield $.ajax({url: xxx, dataType: 'json'});
-      console.log(data1, data2, data3);
-    });
-    注意要引进jq
-    */
     runner(_gen) {
-        return new Promise((resolve, reject) => {
-            var gen = _gen();
-
-            _next();
-
-            function _next(_last_res) {
-                var res = gen.next(_last_res);
-
-                if (!res.done) {
-                    var obj = res.value;
-
-                    if (obj.then) {
-                        obj.then((res) => {
-                            _next(res);
-                        }, (err) => {
-                            reject(err);
-                        });
-                    } else if (typeof obj == 'function') {
-                        if (obj.constructor.toString().startsWith('function GeneratorFunction()')) {
-                            runner(obj).then(res => _next(res), reject);
-                        } else {
-                            _next(obj());
-                        }
-                    } else {
-                        _next(obj);
-                    }
-                } else {
-                    resolve(res.value);
-                }
-            }
-        });
+        return new runner(_gen);
     }
 }
