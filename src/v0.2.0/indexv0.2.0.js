@@ -1,7 +1,7 @@
 import {
     getStyle,
     getClass
-} from './utils'
+} from '../utils'
 
 class little {
     constructor(id) {

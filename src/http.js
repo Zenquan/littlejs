@@ -33,6 +33,5 @@ let ajax = function (method, url, data, success) {
 }
 
 export {
-    ajax,
-    fetch
+    ajax
 }

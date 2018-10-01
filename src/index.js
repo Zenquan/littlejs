@@ -1,21 +1,12 @@
-import { getStyle, getClass } from './utils'
-import { ajax, fetch } from './http'
+import { ajax } from './http'
 import move from './move'
+import tap from './tap'
+import {
+    transitionEnd
+} from './utils'
 
 class little {
-    constructor(id, ev) {
-        /*------------------------attribute--------------------------*/
-        let oDiv = document.getElementById(id);
-        this.aBtn = oDiv.getElementsByTagName('input');
-        this.aDiv = oDiv.getElementsByTagName('div');
-
-        let _this = this;
-        for (let i = 0; i < this.aBtn.length; i++) {
-            this.aBtn[i].index = i;
-            this.aBtn[i].addEventListener(ev, function() {
-                _this.tabSwitch(this);
-            }, false)
-        }
+    constructor() {
     }
     /*-----------------------addEventHandler---------------------------*/
     addEventHandler(elm, type, handler) {
@@ -27,14 +18,14 @@ class little {
             return elm['on' + type] = handler;
         }
     }
-    /*-----------------------tabSwitch---------------------------*/
-    tabSwitch(oBtn) {
-        for (var i = 0; i < this.aBtn.length; i++) {
-            this.aBtn[i].className = '';
-            this.aDiv[i].style.display = 'none';
-        }
-        oBtn.className = 'active';
-        this.aDiv[oBtn.index].style.display = 'block';
+    move(obj, json, fnEnd) {
+        return new move(obj, json, fnEnd);
+    }
+    tap(dom, callback) {
+        return new tap(dom, callback);
+    }
+    transitionEnd(dom, callback) {
+        return new transitionEnd(dom, callback);
     }
     /*------------------------cookie--------------------------*/
     /* 设置cookie */
@@ -61,6 +52,9 @@ class little {
     /* 删除cookie */
     removeCookie(name) {
         setCookie(name, 1, -1);
+    }
+    ajax(method, url, data, success) {
+        return new ajax(method, url, data, success);
     }
     /*--------------------generator's runner---------------------*/
     /*

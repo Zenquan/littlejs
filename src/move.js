@@ -1,3 +1,5 @@
+import {getStyle} from './utils'
+
 /*------------------------move--------------------------*/
 //完美运动框架
 let move = function(obj, json, fnEnd) {

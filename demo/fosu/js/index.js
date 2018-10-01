@@ -1,4 +1,4 @@
-var  ex = new little('div1', 'click');
+var  ex = new little();
 
 var oPlays = document.getElementById('plays'); //获取相关元素
 var oBtn_prev = document.getElementById('p_prev'); //左按钮
@@ -11,22 +11,22 @@ var ofLeft = -2040; //运动初始值
 
 //按钮渐显渐
 oBtn_prev.onmouseover = function () {
-    ex.startMove(this, {
+    ex.move(this, {
         'opacity': 100
     });
 };
 oBtn_prev.onmouseout = function () {
-    ex.startMove(this, {
+    ex.move(this, {
         'opacity': 60
     });
 };
 oBtn_next.onmouseover = function () {
-    ex.startMove(this, {
+    ex.move(this, {
         'opacity': 100
     });
 };
 oBtn_next.onmouseout = function () {
-    ex.startMove(this, {
+    ex.move(this, {
         'opacity': 60
     });
 };
@@ -41,7 +41,7 @@ function autoPlay() {
 
         judge2 = true;
 
-        ex.startMove(oImg_ul, {
+        ex.move(oImg_ul, {
             'left': ofLeft
         }, function () {
             if (ofLeft == -11220) {
@@ -62,7 +62,7 @@ function lastPlay() {
 
         judge2 = true;
 
-        ex.startMove(oImg_ul, {
+        ex.move(oImg_ul, {
             'left': ofLeft
         }, function () {
             if (ofLeft == -1020) {
