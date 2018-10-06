@@ -1,7 +1,7 @@
 <p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://ws1.sinaimg.cn/mw690/005Pf0eLgy1fvt2e93clfj302s02sdfm.jpg" alt="Vue logo"></a></p>
 <h2 align="center">littlejs   -- Little and basic(小不点)</h2>
 
-本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs。
+本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs, 工具式JavaScript库，类似于loadsh。
 
 ## 功能
 
@@ -150,7 +150,7 @@ $ npm publish
 
 ## 谁在使用
 
-- [@jsmini/little](https://github.com/jsmini/little)
+- [@jsmini/base](https://github.com/jsmini/base)
 - [@jsmini/type](https://github.com/jsmini/type)
 - [@jsmini/is](https://github.com/jsmini/is)
 - [@jsmini/guid](https://github.com/jsmini/guid)
