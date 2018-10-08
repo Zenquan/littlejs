@@ -38,3 +38,5 @@
 ## littleMvvm
 - littleMvvm
 - littleVdom
+
+借鉴[es5-polyfill](https://github.com/o2team/es5-polyfill)

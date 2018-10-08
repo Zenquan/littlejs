@@ -100,6 +100,7 @@ ex.startMove(this, {'opacity': 100});
 ```
 ## 线上测试
 [库测试](https://www.jomsou.cn/littlejs)
+[jomsou-site](https://www.jomsou.cn/jomsou-site)
 
 ## 文档
 [API](https://github.com/Zenquan/littlejs/blob/v0.2.0/doc/api.md)
