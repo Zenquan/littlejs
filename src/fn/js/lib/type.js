@@ -1,4 +1,4 @@
-class TypeFn {
+class type {
     isString (o) { //是否字符串
         return Object.prototype.toString.call(o).slice(8, -1) === 'String'
     }
@@ -205,3 +205,5 @@ class TypeFn {
         return true
     }
 }
+
+module.exports =type;

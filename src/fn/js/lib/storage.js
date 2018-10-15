@@ -1,4 +1,4 @@
-class StorageFn {
+class Storage {
     constructor () {
         this.ls = window.localStorage;
         this.ss = window.sessionStorage;
@@ -105,3 +105,5 @@ class StorageFn {
 
     
 }
+
+module.exports = Storage;

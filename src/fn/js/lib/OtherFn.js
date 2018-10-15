@@ -129,3 +129,5 @@ class OtherFn {
         }
     }
 }
+
+module.exports = OtherFn;

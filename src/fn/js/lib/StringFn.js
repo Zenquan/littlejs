@@ -90,3 +90,5 @@ class StringFn {
         return str;
     }
 }
+
+module.exports = StringFn;
