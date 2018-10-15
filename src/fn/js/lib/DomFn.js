@@ -59,3 +59,5 @@ class DomFn {
         }
     }
 }
+
+module.exports = DomFn;

@@ -150,3 +150,5 @@ class ArrayFn {
         return this.sum(arr)/arr.length
     }
 }
+
+module.exports = ArrayFn;

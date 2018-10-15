@@ -205,3 +205,5 @@ class NumberFn {
         }
     
 }
+
+module.exports = NumberFn;

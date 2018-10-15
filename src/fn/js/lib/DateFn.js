@@ -14,7 +14,8 @@ class DateFn {
             time = +time * 1000
         }
 
-        var format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}', date
+        var format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}',
+            date
         if (typeof time === 'object') {
             date = time
         } else {
@@ -57,47 +58,48 @@ class DateFn {
             yy = new Date(time).getFullYear(),
             direction = isNaN(direction) ? 3 : direction,
             index = mm;
-        var cutMonth = function(index) {
-            if ( index <= len && index >= -len) {
-                return direction === 1 ? formatPre(index).concat(cutMonth(++index)):
-                    direction === 2 ? formatNext(index).concat(cutMonth(++index)):formatCurr(index).concat(cutMonth(++index))
+        var cutMonth = function (index) {
+            if (index <= len && index >= -len) {
+                return direction === 1 ? formatPre(index).concat(cutMonth(++index)) :
+                    direction === 2 ? formatNext(index).concat(cutMonth(++index)) : formatCurr(index).concat(cutMonth(++index))
             }
             return []
         }
-        var formatNext = function(i) {
-            var y = Math.floor(i/12),
-                m = i%12
-            return [yy+y + '-' + (m+1)]
+        var formatNext = function (i) {
+            var y = Math.floor(i / 12),
+                m = i % 12
+            return [yy + y + '-' + (m + 1)]
         }
-        var formatPre = function(i) {
-            var y = Math.ceil(i/12),
-                m = i%12
-            m = m===0 ? 12 : m
-            return [yy-y + '-' + (13 - m)]
+        var formatPre = function (i) {
+            var y = Math.ceil(i / 12),
+                m = i % 12
+            m = m === 0 ? 12 : m
+            return [yy - y + '-' + (13 - m)]
         }
-        var formatCurr = function(i) {
-            var y = Math.floor(i/12),
-                yNext = Math.ceil(i/12),
-                m = i%12,
-                mNext = m===0 ? 12 : m
-            return [yy-yNext + '-' + (13 - mNext),yy+y + '-' + (m+1)]
+        var formatCurr = function (i) {
+            var y = Math.floor(i / 12),
+                yNext = Math.ceil(i / 12),
+                m = i % 12,
+                mNext = m === 0 ? 12 : m
+            return [yy - yNext + '-' + (13 - mNext), yy + y + '-' + (m + 1)]
         }
         // 数组去重
-        var unique = function(arr) {
-            if ( Array.hasOwnProperty('from') ) {
+        var unique = function (arr) {
+            if (Array.hasOwnProperty('from')) {
                 return Array.from(new Set(arr));
-            }else{
-                var n = {},r=[]; 
-                for(var i = 0; i < arr.length; i++){
-                    if (!n[arr[i]]){
-                        n[arr[i]] = true; 
+            } else {
+                var n = {},
+                    r = [];
+                for (var i = 0; i < arr.length; i++) {
+                    if (!n[arr[i]]) {
+                        n[arr[i]] = true;
                         r.push(arr[i]);
                     }
                 }
                 return r;
             }
         }
-        return direction !== 3 ? cutMonth(index) : unique(cutMonth(index).sort(function(t1, t2){
+        return direction !== 3 ? cutMonth(index) : unique(cutMonth(index).sort(function (t1, t2) {
             return new Date(t1).getTime() - new Date(t2).getTime()
         }))
     }
@@ -116,32 +118,32 @@ class DateFn {
      */
     getDays(time, len, diretion) {
         var tt = new Date(time)
-        var getDay = function(day) {
+        var getDay = function (day) {
             var t = new Date(time)
             t.setDate(t.getDate() + day)
-            var m = t.getMonth()+1
-            return t.getFullYear()+'-'+m+'-'+t.getDate()
+            var m = t.getMonth() + 1
+            return t.getFullYear() + '-' + m + '-' + t.getDate()
         }
         var arr = []
         if (diretion === 1) {
             for (var i = 1; i <= len; i++) {
                 arr.unshift(getDay(-i))
             }
-        }else if(diretion === 2) {
+        } else if (diretion === 2) {
             for (var i = 1; i <= len; i++) {
                 arr.push(getDay(i))
             }
-        }else {
+        } else {
             for (var i = 1; i <= len; i++) {
                 arr.unshift(getDay(-i))
             }
-            arr.push(tt.getFullYear()+'-'+(tt.getMonth()+1)+'-'+tt.getDate())
+            arr.push(tt.getFullYear() + '-' + (tt.getMonth() + 1) + '-' + tt.getDate())
             for (var i = 1; i <= len; i++) {
                 arr.push(getDay(i))
             }
         }
-        return diretion === 1 ? arr.concat([tt.getFullYear()+'-'+(tt.getMonth()+1)+'-'+tt.getDate()]) : 
-            diretion === 2 ? [tt.getFullYear()+'-'+(tt.getMonth()+1)+'-'+tt.getDate()].concat(arr) : arr
+        return diretion === 1 ? arr.concat([tt.getFullYear() + '-' + (tt.getMonth() + 1) + '-' + tt.getDate()]) :
+            diretion === 2 ? [tt.getFullYear() + '-' + (tt.getMonth() + 1) + '-' + tt.getDate()].concat(arr) : arr
     }
 
 
@@ -151,20 +153,20 @@ class DateFn {
      *
      * @example formatHMS(3610) // -> 1h0m10s
      */
-    formatHMS (s) {
+    formatHMS(s) {
         var str = ''
         if (s > 3600) {
-            str = Math.floor(s/3600)+'h'+Math.floor(s%3600/60)+'m'+s%60+'s'
-        }else if(s > 60) {
-            str = Math.floor(s/60)+'m'+s%60+'s'
-        }else{
-            str = s%60+'s'
+            str = Math.floor(s / 3600) + 'h' + Math.floor(s % 3600 / 60) + 'm' + s % 60 + 's'
+        } else if (s > 60) {
+            str = Math.floor(s / 60) + 'm' + s % 60 + 's'
+        } else {
+            str = s % 60 + 's'
         }
         return str
     }
 
     /*获取某月有多少天*/
-    getMonthOfDay (time) {
+    getMonthOfDay(time) {
         var date = new Date(time)
         var year = date.getFullYear()
         var mouth = date.getMonth() + 1
@@ -172,7 +174,7 @@ class DateFn {
 
         //当月份为二月时，根据闰年还是非闰年判断天数
         if (mouth == 2) {
-            days = (year%4==0 && year%100==0 && year%400==0) || (year%4==0 && year%100!=0) ? 28 : 29
+            days = (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) ? 28 : 29
         } else if (mouth == 1 || mouth == 3 || mouth == 5 || mouth == 7 || mouth == 8 || mouth == 10 || mouth == 12) {
             //月份为：1,3,5,7,8,10,12 时，为大月.则天数为31；
             days = 31
@@ -184,21 +186,21 @@ class DateFn {
     }
 
     /*获取某年有多少天*/
-    getYearOfDay (time) {
+    getYearOfDay(time) {
         var firstDayYear = this.getFirstDayOfYear(time);
         var lastDayYear = this.getLastDayOfYear(time);
-        var numSecond = (new Date(lastDayYear).getTime() - new Date(firstDayYear).getTime())/1000;
-        return Math.ceil(numSecond/(24*3600));
+        var numSecond = (new Date(lastDayYear).getTime() - new Date(firstDayYear).getTime()) / 1000;
+        return Math.ceil(numSecond / (24 * 3600));
     }
 
     /*获取某年的第一天*/
-    getFirstDayOfYear (time) {
+    getFirstDayOfYear(time) {
         var year = new Date(time).getFullYear();
         return year + "-01-01 00:00:00";
     }
 
     /*获取某年最后一天*/
-    getLastDayOfYear (time) {
+    getLastDayOfYear(time) {
         var year = new Date(time).getFullYear();
         var dateString = year + "-12-01 00:00:00";
         var endDay = this.getMonthOfDay(dateString);
@@ -206,18 +208,17 @@ class DateFn {
     }
 
     /*获取某个日期是当年中的第几天*/
-    getDayOfYear (time) {
+    getDayOfYear(time) {
         var firstDayYear = this.getFirstDayOfYear(time);
-        var numSecond = (new Date(time).getTime() - new Date(firstDayYear).getTime())/1000;
-        return Math.ceil(numSecond/(24*3600));
+        var numSecond = (new Date(time).getTime() - new Date(firstDayYear).getTime()) / 1000;
+        return Math.ceil(numSecond / (24 * 3600));
     }
 
     /*获取某个日期在这一年的第几周*/
-    getDayOfYearWeek (time) {
+    getDayOfYearWeek(time) {
         var numdays = this.getDayOfYear(time);
         return Math.ceil(numdays / 7);
     }
-
-
-    
 }
+
+module.exports = DateFn;
