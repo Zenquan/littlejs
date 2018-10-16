@@ -6,6 +6,8 @@ import {
 } from './utils'
 import runner from './runner'
 
+import gesture from './mobile-event/index';
+
 class little {
     constructor() {
     }
@@ -73,5 +75,8 @@ class little {
     }
     runner(_gen) {
         return new runner(_gen);
+    }
+    gesture(target, selector) {
+        return new gesture(target, selector);
     }
 }

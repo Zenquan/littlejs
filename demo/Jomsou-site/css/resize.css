@@ -1,0 +1,36 @@
+@media screen and (max-width: 768px) {
+    body:after {
+        /* 为后面判断设备做准备 */
+        content: 'small';
+    }
+
+    .header>.menu {
+        float: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+    }
+
+    .header>.menu>ul>li {
+        width: 100%;
+        float: none;
+        color: #eeeeee;
+        line-height: 20px;
+        background: #666;
+        border: 1px dotted #ccc;
+    }
+
+    .header>#btn1 {
+        display: block;
+        position: absolute;
+        left: 83%;
+        top: 13px;
+    }
+
+    .header>#btn1>img {
+        border-radius: 3px;
+    }
+}
+
+@media screen and (min-width: 768px)and(max-width: 1200px) {}
