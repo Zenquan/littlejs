@@ -11,6 +11,7 @@
 - [x] 设置、获取或者删除cookie；
 - [x] 支持异步方法之一generator的使用;
 - [x] 手势系统
+- [x] 扩展机制
 
 组件：
 - [x] 轮播图(响应式即适配移动端)；
@@ -98,7 +99,7 @@ requirejs(['node_modules/littlejs/dist/index.aio.js'], function (little) {
 然后使用函数
 ```
 var ex = new little('div1');
-ex.startMove(this, {'opacity': 100});
+ex.move(this, {'opacity': 100});
 ```
 ## 线上测试
 - [库测试](https://www.jomsou.cn/littlejs)

@@ -10,6 +10,7 @@ import gesture from './mobile-event/index';
 
 class little {
     constructor() {
+        this.elements = [];
     }
     attribute(id, btn, div, fn) {
          /*------------------------attribute--------------------------*/
@@ -79,4 +80,9 @@ class little {
     gesture(target, selector) {
         return new gesture(target, selector);
     }
+    //extend函数
+    extend(name, fn) {
+        this.elements[name] = fn;
+    }
 }
+

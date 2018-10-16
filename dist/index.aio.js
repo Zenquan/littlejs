@@ -459,6 +459,8 @@
     var little = function () {
         function little() {
             _classCallCheck$1(this, little);
+
+            this.elements = [];
         }
 
         _createClass$1(little, [{
@@ -554,6 +556,13 @@
             key: 'gesture',
             value: function gesture$$1(target, selector) {
                 return new gesture(target, selector);
+            }
+            //extend函数
+
+        }, {
+            key: 'extend',
+            value: function extend(name, fn) {
+                this.elements[name] = fn;
             }
         }]);
 
