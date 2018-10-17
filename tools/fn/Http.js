@@ -127,7 +127,7 @@ let fetchHttp = function (url, setting = {}) {
     })
 }
 
-module.exports = {
+export {
     ajax,
     fetchHttp
 }

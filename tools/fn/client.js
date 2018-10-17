@@ -18,4 +18,4 @@ let client = function () {
     }
 }
 
-module.exports = client;
+export default client;

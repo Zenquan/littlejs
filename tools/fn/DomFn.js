@@ -60,4 +60,4 @@ class DomFn {
     }
 }
 
-module.exports = DomFn;
+export default DomFn;

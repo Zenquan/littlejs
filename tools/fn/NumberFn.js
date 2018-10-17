@@ -206,4 +206,4 @@ class NumberFn {
     
 }
 
-module.exports = NumberFn;
+export default NumberFn;

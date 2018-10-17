@@ -130,4 +130,4 @@ class OtherFn {
     }
 }
 
-module.exports = OtherFn;
+export default OtherFn;

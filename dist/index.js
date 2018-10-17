@@ -564,3 +564,9 @@ var little = function () {
 
     return little;
 }();
+
+var l = function l() {
+    return new little();
+};
+
+l();

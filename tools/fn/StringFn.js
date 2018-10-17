@@ -91,4 +91,4 @@ class StringFn {
     }
 }
 
-module.exports = StringFn;
+export default StringFn;

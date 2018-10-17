@@ -221,4 +221,4 @@ class DateFn {
     }
 }
 
-module.exports = DateFn;
+export default DateFn;

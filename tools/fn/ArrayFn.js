@@ -151,4 +151,4 @@ class ArrayFn {
     }
 }
 
-module.exports = ArrayFn;
+export default ArrayFn;

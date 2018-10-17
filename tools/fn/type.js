@@ -206,4 +206,4 @@ class type {
     }
 }
 
-module.exports =type;
+export default type;

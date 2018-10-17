@@ -5,4 +5,4 @@ let scroll = function () {
     };
 }
 
-module.exports = scroll;
+export default scroll;

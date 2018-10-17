@@ -1,7 +1,6 @@
 /**
  * Created by zenquan on 2018.10.01
  */
-var ex = new little();
 /*
  * 1.自动轮播  定时器  无缝衔接  动画结束瞬间定位
  * 2.点需要随着轮播的滚动改变对应的点  改变当前样式  当前图片的索引
@@ -53,7 +52,7 @@ var timer = setInterval(function () {
 }, 3000);
 
 //等过渡结束之后来做无缝衔接
-ex.transitionEnd(bannerInitArgs.imageBox, function () {
+l().transitionEnd(bannerInitArgs.imageBox, function () {
     //处理事件结束后的业务逻辑
     if (index > bannerInitArgs.imageCount) {
         index = 1;

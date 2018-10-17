@@ -26,13 +26,13 @@
   <script>
   var el = document.getElementById('img');
   var p = document.getElementById("text");
-  var ex = new little();
+
   var initscale = 1;
   Transform(el);
   function text(str) {
     p.innerHTML = str;
   }
-ex.gesture(el).on('tap',function(){
+l().gesture(el).on('tap',function(){
   text('执行tap事件')
 }).on('touch',function(){
   initscale = el.scaleX;

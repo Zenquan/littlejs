@@ -1,7 +1,7 @@
 <p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://ws1.sinaimg.cn/mw690/005Pf0eLgy1fvt2e93clfj302s02sdfm.jpg" alt="Vue logo"></a></p>
 <h2 align="center">littlejs   -- Little and basic(小不点)</h2>
 
-本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs, 工具式JavaScript库，类似于loadsh。
+【重构开发中】本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs, 工具式JavaScript库，类似于loadsh。
 
 ## 功能
 
@@ -12,6 +12,18 @@
 - [x] 支持异步方法之一generator的使用;
 - [x] 手势系统
 - [x] 扩展机制
+- [x] 常用工具库fn
+    - [x] ArraryFn
+    - [x] client系列兼容库
+    - [x] DateFn
+    - [x] DomFn
+    - [x] Http（ajax、fetchHttp）
+    - [x] NumberFn
+    - [x] scroll系列兼容库
+    - [x] Storage缓存库
+    - [x] StringFn
+    - [x] type类型判断库
+    - [x] OtherFn
 
 组件：
 - [x] 轮播图(响应式即适配移动端)；
@@ -98,8 +110,7 @@ requirejs(['node_modules/littlejs/dist/index.aio.js'], function (little) {
 ```
 然后使用函数
 ```
-var ex = new little('div1');
-ex.move(this, {'opacity': 100});
+l().move(this, {'opacity': 100});
 ```
 ## 线上测试
 - [库测试](https://www.jomsou.cn/littlejs)

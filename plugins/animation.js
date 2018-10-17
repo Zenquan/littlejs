@@ -1,5 +1,4 @@
-var ex = new little();
-ex.extend('animate', function (json) {
+l().extend('animate', function (json) {
     for (var i = 0; i < this.element.length; i++) {
         startMove(this.element[i], json);
     }
