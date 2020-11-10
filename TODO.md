@@ -14,7 +14,6 @@
 ## littlejs(ts版)（融合tools）
 
 核心功能：
-- [ ] 手势系统
 - [ ] h5播放器
 
 组件
@@ -38,3 +37,5 @@
 ## littleMvvm
 - littleMvvm
 - littleVdom
+
+借鉴[es5-polyfill](https://github.com/o2team/es5-polyfill)

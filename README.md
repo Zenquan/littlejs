@@ -1,7 +1,7 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://ws1.sinaimg.cn/mw690/005Pf0eLgy1fvt2e93clfj302s02sdfm.jpg" alt="Vue logo"></a></p>
-<h2 align="center">littlejs   -- Little and basic(小不点)</h2>
+<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkkg1f8ccjj302s02sdfm.jpg" alt="littlejs logo"></a></p>
+<h2 align="center">littlejs   -- Little and basic</h2>
 
-本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs。
+【重构开发中】本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs, 工具式JavaScript库，类似于loadsh。
 
 ## 功能
 
@@ -9,11 +9,26 @@
 - [x] 运动框架;
 - [x] 用ajax实现前后端分离；
 - [x] 设置、获取或者删除cookie；
-- [x] 支持异步方法之一generator的使用。
+- [x] 支持异步方法之一generator的使用;
+- [x] 手势系统
+- [x] 扩展机制
+- [x] 常用工具库fn
+    - [x] ArraryFn
+    - [x] client系列兼容库
+    - [x] DateFn
+    - [x] DomFn
+    - [x] Http（ajax、fetchHttp）
+    - [x] NumberFn
+    - [x] scroll系列兼容库
+    - [x] Storage缓存库
+    - [x] StringFn
+    - [x] type类型判断库
+    - [x] OtherFn
 
 组件：
-- [x] 轮播图(响应式即适配移动端)
+- [x] 轮播图(响应式即适配移动端)；
 - [x] 选项卡；
+- [x] 图片懒加载(瀑布流)；
 
 ## 特性
 
@@ -95,11 +110,11 @@ requirejs(['node_modules/littlejs/dist/index.aio.js'], function (little) {
 ```
 然后使用函数
 ```
-var ex = new little('div1');
-ex.startMove(this, {'opacity': 100});
+l().move(this, {'opacity': 100});
 ```
 ## 线上测试
-[库测试](https://www.jomsou.cn/littlejs)
+- [库测试](https://www.jomsou.cn/littlejs)
+- [jomsou-site](https://www.jomsou.cn/Jomsou-site)
 
 ## 文档
 [API](https://github.com/Zenquan/littlejs/blob/v0.2.0/doc/api.md)
@@ -150,7 +165,7 @@ $ npm publish
 
 ## 谁在使用
 
-- [@jsmini/little](https://github.com/jsmini/little)
+- [@jsmini/base](https://github.com/jsmini/base)
 - [@jsmini/type](https://github.com/jsmini/type)
 - [@jsmini/is](https://github.com/jsmini/is)
 - [@jsmini/guid](https://github.com/jsmini/guid)
