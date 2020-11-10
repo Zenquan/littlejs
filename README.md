@@ -1,5 +1,5 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://ws1.sinaimg.cn/mw690/005Pf0eLgy1fvt2e93clfj302s02sdfm.jpg" alt="Vue logo"></a></p>
-<h2 align="center">littlejs   -- Little and basic(小不点)</h2>
+<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkkg1f8ccjj302s02sdfm.jpg" alt="littlejs logo"></a></p>
+<h2 align="center">littlejs   -- Little and basic</h2>
 
 【重构开发中】本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs, 工具式JavaScript库，类似于loadsh。
 
