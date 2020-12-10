@@ -1,7 +1,7 @@
 {
   "name": "@jomsou/littlejs",
-  "version": "0.2.3",
-  "description": "js基础库",
+  "version": "1.0.0",
+  "description": "js兼容库",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
