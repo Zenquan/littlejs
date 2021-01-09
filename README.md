@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://ws1.sinaimg.cn/mw690/005Pf0eLgy1fvt2e93clfj302s02sdfm.jpg" alt="Vue logo"></a></p>
+<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="100" src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkkg1f8ccjj302s02sdfm.jpg" alt="littlejs logo"></a></p>
 <h2 align="center">littlejs   -- Little and basic(小不点)</h2>
 
 本项目是基于[jslib-little](https://github.com/yanhaijing/jslib-little)环境重构littlejs。
